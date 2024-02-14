@@ -5,6 +5,17 @@ window.onload = function(){
     let destacado = document.querySelectorAll('p');
     let fondo = document.querySelector('body');
     let enlace = document.querySelector('a');
+
+    let logo = document.querySelector('.logoDH');
+    let menu = document.getElementById('menu');
+
+    logo.addEventListener('click', ()=> {
+        menu.classList.toggle('mostrar');
+    })
+
+    menu.addEventListener('mouseleave', ()=> {
+        menu.classList.remove('mostrar');
+    })
     
     let nombre = prompt('Ingrese su nombre');
     console.log(nombre);
@@ -13,7 +24,7 @@ window.onload = function(){
     }else{
         subtitulo.innerHTML += 'INVITADO';
     }
-        
+    
     subtitulo.style.textTransform = 'uppercase';
     let confirmar = confirm('Desea colocar un fondo de pantalla ')
     if(confirmar){
